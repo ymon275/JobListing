@@ -1,0 +1,71 @@
+$primary-color: hsl(180, 29%, 50%);
+$background: hsl(180, 52%, 96%);
+$filter-tabs: hsl(180, 31%, 95%);
+$dark-cyan: hsl(180, 8%, 52%);
+$very-dark-cyan: hsl(180, 14%, 20%);
+$font-size: 15px;
+$font: 'spartan';
+
+* {
+    
+    font-family: $font;
+    font-size: $font-size;
+}
+
+@mixin colorPallete {
+    color: $primary-color;
+    background: $very-dark-cyan;
+    font-size: 15px;
+    
+}
+
+@font-face {
+    font-family: 'spartan';
+    src: url('static/Spartan-Regular.ttf'), url('static/Spartan-Bold.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: $background;
+    margin: 0;
+}
+
+// .container {
+//     // background-color: #fff;
+//     // padding: 25px;
+//     // margin: 20px auto;
+// }
+
+
+
+#bg_header {
+    background-color: $primary-color;
+    margin: 0;
+    background-image: url('images/bg-header-desktop.svg');
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    width: 100%;
+}
+
+.card {
+    margin: auto;
+}
+
+.btn-secondary {
+    color: $primary-color;
+    background-color: $filter-tabs;
+    border-radius: 3px;
+    border: none;
+    margin: 0 5px;
+    &:hover {
+        color: #fff;
+        background-color: $primary-color;
+        border:none;
+    }
+}
+
+.btn-container {
+    float: right;
+}

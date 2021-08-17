@@ -1,0 +1,49 @@
+* {
+  font-family: "spartan";
+  font-size: 15px;
+}
+
+@font-face {
+  font-family: 'spartan';
+  src: url("static/Spartan-Regular.ttf"), url("static/Spartan-Bold.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  background-color: #effafa;
+  margin: 0;
+}
+
+#bg_header {
+  background-color: #5ba4a4;
+  margin: 0;
+  background-image: url("images/bg-header-desktop.svg");
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  width: 100%;
+}
+
+.card {
+  margin: auto;
+}
+
+.btn-secondary {
+  color: #5ba4a4;
+  background-color: #eef6f6;
+  border-radius: 3px;
+  border: none;
+  margin: 0 5px;
+}
+
+.btn-secondary:hover {
+  color: #fff;
+  background-color: #5ba4a4;
+  border: none;
+}
+
+.btn-container {
+  float: right;
+}
+/*# sourceMappingURL=stylesheet.css.map */
