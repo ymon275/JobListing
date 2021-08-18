@@ -4,7 +4,7 @@ $filter-tabs: hsl(180, 31%, 95%);
 $dark-cyan: hsl(180, 8%, 52%);
 $very-dark-cyan: hsl(180, 14%, 20%);
 $font-size: 15px;
-$font: "spartan";
+$font: 'spartan';
 
 * {
   font-family: $font;
@@ -18,8 +18,8 @@ $font: "spartan";
 }
 
 @font-face {
-  font-family: "spartan";
-  src: url("static/Spartan-Regular.ttf"), url("static/Spartan-Bold.ttf");
+  font-family: 'spartan';
+  src: url('static/Spartan-Regular.ttf'), url('static/Spartan-Bold.ttf');
   font-weight: normal;
   font-style: normal;
 }
@@ -34,23 +34,30 @@ body {
 }
 
 .titleContainer {
-    float: left;
+  float: left;
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 
 .row {
   display: flex;
+  flex-wrap: nowrap;
 }
-
-
+.paragraph {
+  width: 35% !important;
+}
 .card-body {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: space-around;
 }
 
 #bg_header {
   background-color: $primary-color;
   margin: 0;
-  background-image: url("images/bg-header-desktop.svg");
+  background-image: url('images/bg-header-desktop.svg');
   background-size: cover;
   background-position: center;
   height: 200px;
@@ -63,9 +70,9 @@ body {
 }
 
 .btn-primary {
-    margin:0;
-    // transform: translate(-800%, -20px);
-    // position: relative;
+  margin: 0;
+  // transform: translate(-800%, -20px);
+  // position: relative;
 }
 
 .btn-secondary {
@@ -82,11 +89,13 @@ body {
 }
 
 .btn-container {
-  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .card-title {
-    font-weight: 700;
+  font-weight: 700;
   &:hover {
     color: $primary-color;
   }
@@ -95,19 +104,19 @@ body {
 .form-control-lg {
   width: 60%;
   margin: auto;
-  transform: translate(0, -20px)
+  transform: translate(0, -20px);
 }
 
 .searchButton {
-    margin:0;
-    padding:0;
-    float: left;
-    transform: translate(-610%, -20px);
-    border: 1px lightgray solid;
-    border-left: none;
-    border-radius: 5px;
-    background-color: #fff;
-    color: $primary-color;
+  margin: 0;
+  padding: 0;
+  float: left;
+  transform: translate(-610%, -20px);
+  border: 1px lightgray solid;
+  border-left: none;
+  border-radius: 5px;
+  background-color: #fff;
+  color: $primary-color;
 }
 
 .newTag {
@@ -115,6 +124,7 @@ body {
   color: #fff;
   border-radius: 12px;
   width: 70px;
+  margin-right: 2px;
 }
 
 .featTag {
@@ -122,9 +132,11 @@ body {
   color: #fff;
   border-radius: 12px;
   width: 109px;
+  text-align: center;
 }
 
 .bottom-row {
   font-weight: 300;
   font-size: 12px;
+  width: 30%;
 }

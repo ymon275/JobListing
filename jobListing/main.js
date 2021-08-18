@@ -46,6 +46,7 @@ window.onload = () => {
   //     </div>
   //   </div>
   for (let i = 0; i < applications.length; i++) {
+
     let cardDiv = document.createElement("div");
     cardDiv.classList.add("card");
 
@@ -63,8 +64,10 @@ window.onload = () => {
 
     let companyRow = document.createElement("div");
     companyRow.classList.add("row");
+    
 
     let company = document.createElement("p");
+    company.style = "width: 110px"
     company.innerHTML = `${applications[i].company}`;
     companyRow.appendChild(company);
 
