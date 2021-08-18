@@ -4,68 +4,102 @@ $filter-tabs: hsl(180, 31%, 95%);
 $dark-cyan: hsl(180, 8%, 52%);
 $very-dark-cyan: hsl(180, 14%, 20%);
 $font-size: 15px;
-$font: 'spartan';
+$font: "spartan";
 
 * {
-    
-    font-family: $font;
-    font-size: $font-size;
+  font-family: $font;
+  font-size: $font-size;
 }
 
 @mixin colorPallete {
-    color: $primary-color;
-    background: $very-dark-cyan;
-    font-size: 15px;
-    
+  color: $primary-color;
+  background: $very-dark-cyan;
+  font-size: 15px;
 }
 
 @font-face {
-    font-family: 'spartan';
-    src: url('static/Spartan-Regular.ttf'), url('static/Spartan-Bold.ttf');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "spartan";
+  src: url("static/Spartan-Regular.ttf"), url("static/Spartan-Bold.ttf");
+  font-weight: normal;
+  font-style: normal;
 }
 
 body {
-    background-color: $background;
-    margin: 0;
+  background-color: $background;
+  margin: 0;
 }
 
-// .container {
-//     // background-color: #fff;
-//     // padding: 25px;
-//     // margin: 20px auto;
-// }
+.container {
+  display: flex;
+}
 
+.row {
+  display: flex;
+}
 
+.card-body {
+  display: flex;
+  justify-content: space-between;
+}
 
 #bg_header {
-    background-color: $primary-color;
-    margin: 0;
-    background-image: url('images/bg-header-desktop.svg');
-    background-size: cover;
-    background-position: center;
-    height: 200px;
-    width: 100%;
+  background-color: $primary-color;
+  margin: 0;
+  background-image: url("images/bg-header-desktop.svg");
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  width: 100%;
 }
 
 .card {
-    margin: auto;
+  width: 65%;
+  margin: 10px auto;
+}
+
+.btn-primary {
+    margin:0;
+    transform: translate(-300%, -20px);
+
 }
 
 .btn-secondary {
-    color: $primary-color;
-    background-color: $filter-tabs;
-    border-radius: 3px;
+  color: $primary-color;
+  background-color: $filter-tabs;
+  border-radius: 3px;
+  border: none;
+  margin: 0 5px;
+  &:hover {
+    color: #fff;
+    background-color: $primary-color;
     border: none;
-    margin: 0 5px;
-    &:hover {
-        color: #fff;
-        background-color: $primary-color;
-        border:none;
-    }
+  }
 }
 
 .btn-container {
-    float: right;
+  margin: 0;
+}
+
+.card-title {
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+.form-control-lg {
+  width: 60%;
+  margin: auto;
+  transform: translate(0, -20px)
+}
+
+.searchButton {
+    margin:0;
+    padding:0;
+    float: left;
+    transform: translate(-610%, -20px);
+    border: 1px lightgray solid;
+    border-left: none;
+    border-radius: 5px;
+    background-color: #fff;
+    color: $primary-color;
 }

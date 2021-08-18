@@ -4,7 +4,7 @@
 }
 
 @font-face {
-  font-family: 'spartan';
+  font-family: "spartan";
   src: url("static/Spartan-Regular.ttf"), url("static/Spartan-Bold.ttf");
   font-weight: normal;
   font-style: normal;
@@ -13,6 +13,27 @@
 body {
   background-color: #effafa;
   margin: 0;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.card-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 #bg_header {
@@ -26,7 +47,14 @@ body {
 }
 
 .card {
-  margin: auto;
+  width: 65%;
+  margin: 10px auto;
+}
+
+.btn-primary {
+  margin: 0;
+  -webkit-transform: translate(-300%, -20px);
+          transform: translate(-300%, -20px);
 }
 
 .btn-secondary {
@@ -44,6 +72,30 @@ body {
 }
 
 .btn-container {
-  float: right;
+  margin: 0;
+}
+
+.card-title:hover {
+  color: #5ba4a4;
+}
+
+.form-control-lg {
+  width: 60%;
+  margin: auto;
+  -webkit-transform: translate(0, -20px);
+          transform: translate(0, -20px);
+}
+
+.searchButton {
+  margin: 0;
+  padding: 0;
+  float: left;
+  -webkit-transform: translate(-610%, -20px);
+          transform: translate(-610%, -20px);
+  border: 1px lightgray solid;
+  border-left: none;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #5ba4a4;
 }
 /*# sourceMappingURL=stylesheet.css.map */
