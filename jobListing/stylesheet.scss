@@ -33,9 +33,14 @@ body {
   display: flex;
 }
 
+.titleContainer {
+    float: left;
+}
+
 .row {
   display: flex;
 }
+
 
 .card-body {
   display: flex;
@@ -59,8 +64,8 @@ body {
 
 .btn-primary {
     margin:0;
-    transform: translate(-300%, -20px);
-
+    // transform: translate(-800%, -20px);
+    // position: relative;
 }
 
 .btn-secondary {
@@ -81,6 +86,7 @@ body {
 }
 
 .card-title {
+    font-weight: 700;
   &:hover {
     color: $primary-color;
   }
@@ -102,4 +108,23 @@ body {
     border-radius: 5px;
     background-color: #fff;
     color: $primary-color;
+}
+
+.newTag {
+  background-color: $primary-color;
+  color: #fff;
+  border-radius: 12px;
+  width: 70px;
+}
+
+.featTag {
+  background-color: black;
+  color: #fff;
+  border-radius: 12px;
+  width: 109px;
+}
+
+.bottom-row {
+  font-weight: 300;
+  font-size: 12px;
 }

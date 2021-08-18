@@ -30,6 +30,12 @@ let applications = [
     tools: ["React"],
   },
 ];
+
+function clearSearch() {
+  document.getElementById("searchBar").value = "";
+  return false;
+}
+
 window.onload = () => {
   //     <div class="card" style="width: 18rem;">
   //     <img src="..." class="card-img-top" alt="...">
@@ -48,14 +54,7 @@ window.onload = () => {
     cardDiv.appendChild(insideDiv);
 
     let profPic = document.createElement("img");
-    // langDiv.classList.add("");
-    switch (applications[i].company) {
-      case "Photosnap":
-        profPic.src = "images/photosnap.svg";
-        break;
-      case "Manage":
-        profPic.src = "images/manage.svg";
-    }
+    profPic.src = applications[i].logo;
     insideDiv.appendChild(profPic);
 
     let titleColumn = document.createElement("div");
@@ -70,21 +69,45 @@ window.onload = () => {
     companyRow.appendChild(company);
 
     let newTag = document.createElement("p");
+    newTag.classList.add("newTag");
     if (applications[i].new === true) {
-      newTag.innerHTML = "New!";
+      newTag.innerHTML = "NEW!";
+      cardDiv.style.borderLeft = "5px hsl(180, 29%, 50%) solid";
     }
     companyRow.appendChild(newTag);
+
+    let featTag = document.createElement("p");
+    featTag.classList.add("featTag");
+    if (applications[i].featured === true) {
+      featTag.innerHTML = "FEATURED";
+    }
+    companyRow.appendChild(featTag);
 
     titleColumn.appendChild(companyRow);
 
     let title = document.createElement("h5");
-    title.classList.add("row");
+    title.classList.add("card-title");
     title.innerHTML = `${applications[i].position}`;
     titleColumn.appendChild(title);
 
     let timeRow = document.createElement("div");
     timeRow.classList.add("row");
     titleColumn.appendChild(timeRow);
+
+    let post = document.createElement("p");
+    post.classList.add("bottom-row");
+    post.innerHTML = `${applications[i].postedAt}`;
+    timeRow.appendChild(post);
+
+    let contract = document.createElement("p");
+    contract.classList.add("bottom-row");
+    contract.innerHTML = `${applications[i].contract}`;
+    timeRow.appendChild(contract);
+
+    let location = document.createElement("p");
+    location.classList.add("bottom-row");
+    location.innerHTML = `${applications[i].location}`;
+    timeRow.appendChild(location);
 
     // let para = document.createElement("p");
     // para.classList.add("card-text");
@@ -94,12 +117,30 @@ window.onload = () => {
     langDiv.classList.add("btn-container");
     insideDiv.appendChild(langDiv);
 
+    let roleButton = document.createElement("button");
+    roleButton.classList.add("btn-secondary");
+    roleButton.innerHTML = `${applications[i].role}`;
+    langDiv.appendChild(roleButton);
+
+    let levelButton = document.createElement("button");
+    levelButton.classList.add("btn-secondary");
+    levelButton.innerHTML = `${applications[i].level}`;
+    langDiv.appendChild(levelButton);
+
     for (j = 0; j < applications[i].languages.length; j++) {
       let langButton = document.createElement("button");
       langButton.classList.add("btn-secondary");
       langButton.innerHTML = `${applications[i].languages[j]}`;
       console.log(langButton.innerHTML);
       langDiv.appendChild(langButton);
+    }
+
+    for (j = 0; j < applications[i].tools.length; j++) {
+      let toolsButton = document.createElement("button");
+      toolsButton.classList.add("btn-secondary");
+      toolsButton.innerHTML = `${applications[i].tools[j]}`;
+      console.log(toolsButton.innerHTML);
+      langDiv.appendChild(toolsButton);
     }
 
     document.body.appendChild(cardDiv);

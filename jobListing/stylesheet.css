@@ -21,6 +21,10 @@ body {
   display: flex;
 }
 
+.titleContainer {
+  float: left;
+}
+
 .row {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -53,8 +57,6 @@ body {
 
 .btn-primary {
   margin: 0;
-  -webkit-transform: translate(-300%, -20px);
-          transform: translate(-300%, -20px);
 }
 
 .btn-secondary {
@@ -73,6 +75,10 @@ body {
 
 .btn-container {
   margin: 0;
+}
+
+.card-title {
+  font-weight: 700;
 }
 
 .card-title:hover {
@@ -97,5 +103,24 @@ body {
   border-radius: 5px;
   background-color: #fff;
   color: #5ba4a4;
+}
+
+.newTag {
+  background-color: #5ba4a4;
+  color: #fff;
+  border-radius: 12px;
+  width: 70px;
+}
+
+.featTag {
+  background-color: black;
+  color: #fff;
+  border-radius: 12px;
+  width: 109px;
+}
+
+.bottom-row {
+  font-weight: 300;
+  font-size: 12px;
 }
 /*# sourceMappingURL=stylesheet.css.map */
