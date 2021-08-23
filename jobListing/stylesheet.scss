@@ -39,19 +39,22 @@ body {
   align-content: center;
   flex-wrap: wrap;
   flex-direction: column;
+  margin-left: 1rem;
 }
 
 .row {
   display: flex;
   flex-wrap: nowrap;
 }
+
 .paragraph {
-  width: 35% !important;
+  width: 38% !important;
 }
+
 .card-body {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 #bg_header {
@@ -80,6 +83,7 @@ body {
   background-color: $filter-tabs;
   border-radius: 3px;
   border: none;
+  // position: absolute;
   margin: 0 5px;
   &:hover {
     color: #fff;
@@ -119,12 +123,18 @@ body {
   color: $primary-color;
 }
 
+.card-body2 {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .newTag {
   background-color: $primary-color;
   color: #fff;
   border-radius: 12px;
   width: 70px;
-  margin-right: 2px;
+  margin-right: 5px;
 }
 
 .featTag {
@@ -138,5 +148,23 @@ body {
 .bottom-row {
   font-weight: 300;
   font-size: 12px;
-  width: 30%;
+  width: 36% !important;
+}
+
+.mycustom {
+  position: relative;
+}
+
+.mycustom input[type=search] {
+  border: none;
+  width: 60%;
+}
+
+.mycustom .input-group-prepend {
+  position: absolute;
+  align-content: center;
+  transform: translate(0, -9px);
+  // left: 4px;
+  // top: 3px;
+  z-index:9;
 }

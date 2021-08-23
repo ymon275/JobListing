@@ -15,15 +15,30 @@
   </head>
   <body>
     <div id="bg_header"></div>
-    <form role="search" style="display:flex;">
-      <input
-        class="form-control form-control-lg"
-        type="search"
-        placeholder="Filter..."
-        id="searchBar"
-      />
-      <button class="searchButton" onclick="clearSearch()" type="button">clear</button>
-    </form>
+    <!-- <form role="search" style="display:flex;"> -->
+      <div class="input-group mycustom">
+        <input
+          class="form-control form-control-lg"
+          type="search"
+          placeholder="Filter..."
+          id="searchBar"
+        />
+        <div class="input-group-prepend" id="button-group">
+
+        </div>
+      </div>
+      <!-- <form>
+        <div class="col-lg-10 mb-3">
+          <div class="input-group mycustom">
+            <input type="text" class="form-control rounded-0" id="validationDefaultUsername" placeholder="Username" aria-describedby="inputGroupPrepend2" required>
+            <div class="input-group-prepend">
+              <button class="btn btn-primary btn-sm rounded-0" id="inputGroupPrepend2">Submit</button>
+            </div>
+          </div>
+        </div>
+      </form> -->
+      <!-- <button class="searchButton" onclick="clearSearch()" type="button">clear</button> -->
+    <!-- </form> -->
     <!-- 
     <div class="container">
         Lorem ipsum dolor sit amet.

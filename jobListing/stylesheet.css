@@ -34,6 +34,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-left: 1rem;
 }
 
 .row {
@@ -45,7 +46,7 @@ body {
 }
 
 .paragraph {
-  width: 35% !important;
+  width: 38% !important;
 }
 
 .card-body {
@@ -55,8 +56,9 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 #bg_header {
@@ -131,12 +133,23 @@ body {
   color: #5ba4a4;
 }
 
+.card-body2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
 .newTag {
   background-color: #5ba4a4;
   color: #fff;
   border-radius: 12px;
   width: 70px;
-  margin-right: 2px;
+  margin-right: 5px;
 }
 
 .featTag {
@@ -150,6 +163,24 @@ body {
 .bottom-row {
   font-weight: 300;
   font-size: 12px;
-  width: 30%;
+  width: 36% !important;
+}
+
+.mycustom {
+  position: relative;
+}
+
+.mycustom input[type=search] {
+  border: none;
+  width: 60%;
+}
+
+.mycustom .input-group-prepend {
+  position: absolute;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-transform: translate(0, -9px);
+          transform: translate(0, -9px);
+  z-index: 9;
 }
 /*# sourceMappingURL=stylesheet.css.map */
