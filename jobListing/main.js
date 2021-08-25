@@ -173,14 +173,6 @@ fetch("data.json")
     errorScreen.innerHTML = "Sorry, there was a problem";
   })
   .finally(() => {
-  //     <div class="card" style="width: 18rem;">
-  //     <img src="..." class="card-img-top" alt="...">
-  //     <div class="card-body">
-  //       <h5 class="card-title">Card title</h5>
-  //       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  //       <a href="#" class="btn btn-primary">Go somewhere</a>
-  //     </div>
-  //   </div>
   for (let i = 0; i < applications.length; i++) {
     let cardDiv = document.createElement('div');
     cardDiv.classList.add('card');
@@ -195,7 +187,8 @@ fetch("data.json")
     let inside2Div = document.createElement('div');
     inside2Div.classList.add('card-body');
     inside2Div.classList.add('card-body2');
-    inside2Div.classList.add('col-6');
+    insideDiv.classList.add('col-4');
+    // inside2Div.classList.add('col-12');
     cardDiv.appendChild(inside2Div);
 
     let profPic = document.createElement('img');
@@ -213,12 +206,14 @@ fetch("data.json")
 
     let company = document.createElement('p');
     company.classList.add('paragraph');
+    company.classList.add("col-3");
     company.innerHTML = `${applications[i].company}`;
     companyRow.appendChild(company);
     
     if (applications[i].new === true) {
       let newTag = document.createElement('p');
       newTag.classList.add('newTag');
+      newTag.classList.add("col-2");
       newTag.innerHTML = 'NEW!';
       cardDiv.style.borderLeft = '5px hsl(180, 29%, 50%) solid';
       companyRow.appendChild(newTag);
@@ -227,6 +222,7 @@ fetch("data.json")
     if (applications[i].featured === true) {
       let featTag = document.createElement('p');
       featTag.classList.add('featTag');
+      featTag.classList.add("col-2");
       featTag.innerHTML = 'FEATURED';
       companyRow.appendChild(featTag);
     }
@@ -244,16 +240,19 @@ fetch("data.json")
 
     let post = document.createElement('p');
     post.classList.add('bottom-row');
+    post.classList.add("col");
     post.innerHTML = `${applications[i].postedAt}`;
     timeRow.appendChild(post);
 
     let contract = document.createElement('p');
     contract.classList.add('bottom-row');
+    contract.classList.add("col");
     contract.innerHTML = `${applications[i].contract}`;
     timeRow.appendChild(contract);
 
     let location = document.createElement('p');
     location.classList.add('bottom-row');
+    location.classList.add('col');
     location.innerHTML = `${applications[i].location}`;
     timeRow.appendChild(location);
 

@@ -1,4 +1,8 @@
-* {
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-family: "spartan";
   font-size: 15px;
 }
@@ -23,6 +27,7 @@ body {
 
 .titleContainer {
   float: left;
+  margin-left: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -34,21 +39,21 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-left: 1rem;
 }
 
 .row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
 }
 
 .paragraph {
-  width: 40% !important;
+  width: 100% !important;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  margin-bottom: 10px;
   top: 10px;
-  position: absolute;
 }
 
 .card-body {
@@ -58,9 +63,6 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 
 #bg_header {
@@ -75,6 +77,17 @@ body {
 
 .card {
   width: 65%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  min-width: 320px !important;
   margin: 10px auto;
 }
 
@@ -92,19 +105,9 @@ body {
   border: none;
 }
 
-.btn-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
 .card-title {
   font-weight: 700;
+  left: 10px;
 }
 
 .card-title:hover {
@@ -113,6 +116,9 @@ body {
 
 .form-control-lg {
   width: 65% !important;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   margin: auto;
   -webkit-transform: translate(0, -20px);
           transform: translate(0, -20px);
@@ -134,10 +140,8 @@ body {
   color: #fff;
   border-radius: 12px;
   width: 70px;
+  height: 20px;
   margin-right: 5px;
-  left: 230px;
-  top: 10px;
-  position: absolute;
 }
 
 .featTag {
@@ -145,20 +149,26 @@ body {
   color: #fff;
   border-radius: 12px;
   width: 109px;
+  height: 20px;
   text-align: center;
-  left: 310px;
-  top: 10px;
-  position: absolute;
 }
 
 .companyRow {
   height: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: wrap;
+      -ms-flex: wrap;
+          flex: wrap;
 }
 
 .bottom-row {
   font-weight: 300;
   font-size: 12px;
-  width: 40% !important;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
 }
 
 .mycustom {
