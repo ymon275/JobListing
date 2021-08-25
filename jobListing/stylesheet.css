@@ -91,6 +91,21 @@ body {
   margin: 10px auto;
 }
 
+@media (max-width: 1242px) {
+  .card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: normal;
+        -ms-flex-align: normal;
+            align-items: normal;
+  }
+}
+
 .btn-secondary {
   color: #5ba4a4;
   background-color: #eef6f6;
