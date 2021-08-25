@@ -46,7 +46,9 @@ body {
 }
 
 .paragraph {
-  width: 38% !important;
+  width: 40% !important;
+  top: 10px;
+  position: absolute;
 }
 
 .card-body {
@@ -74,10 +76,6 @@ body {
 .card {
   width: 65%;
   margin: 10px auto;
-}
-
-.btn-primary {
-  margin: 0;
 }
 
 .btn-secondary {
@@ -114,23 +112,10 @@ body {
 }
 
 .form-control-lg {
-  width: 60%;
+  width: 65% !important;
   margin: auto;
   -webkit-transform: translate(0, -20px);
           transform: translate(0, -20px);
-}
-
-.searchButton {
-  margin: 0;
-  padding: 0;
-  float: left;
-  -webkit-transform: translate(-610%, -20px);
-          transform: translate(-610%, -20px);
-  border: 1px lightgray solid;
-  border-left: none;
-  border-radius: 5px;
-  background-color: #fff;
-  color: #5ba4a4;
 }
 
 .card-body2 {
@@ -150,6 +135,9 @@ body {
   border-radius: 12px;
   width: 70px;
   margin-right: 5px;
+  left: 230px;
+  top: 10px;
+  position: absolute;
 }
 
 .featTag {
@@ -158,12 +146,19 @@ body {
   border-radius: 12px;
   width: 109px;
   text-align: center;
+  left: 310px;
+  top: 10px;
+  position: absolute;
+}
+
+.companyRow {
+  height: 25px;
 }
 
 .bottom-row {
   font-weight: 300;
   font-size: 12px;
-  width: 36% !important;
+  width: 40% !important;
 }
 
 .mycustom {
@@ -172,7 +167,7 @@ body {
 
 .mycustom input[type=search] {
   border: none;
-  width: 60%;
+  width: 65%;
 }
 
 .mycustom .input-group-prepend {
@@ -181,6 +176,8 @@ body {
       align-content: center;
   -webkit-transform: translate(0, -9px);
           transform: translate(0, -9px);
+  left: 18%;
+  top: 0px;
   z-index: 9;
 }
 /*# sourceMappingURL=stylesheet.css.map */

@@ -39,7 +39,7 @@ body {
   align-content: center;
   flex-wrap: wrap;
   flex-direction: column;
-  margin-left: 1rem;
+  // margin-left: 1rem;
 }
 
 .row {
@@ -48,13 +48,16 @@ body {
 }
 
 .paragraph {
-  width: 38% !important;
+  width: 40% !important;
+  // height: 50px;
+  top: 10px;
+  position: absolute;
 }
 
 .card-body {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  // justify-content: space-between;
 }
 
 #bg_header {
@@ -70,12 +73,6 @@ body {
 .card {
   width: 65%;
   margin: 10px auto;
-}
-
-.btn-primary {
-  margin: 0;
-  // transform: translate(-800%, -20px);
-  // position: relative;
 }
 
 .btn-secondary {
@@ -100,28 +97,29 @@ body {
 
 .card-title {
   font-weight: 700;
+  left: 10px;
   &:hover {
     color: $primary-color;
   }
 }
 
 .form-control-lg {
-  width: 60%;
+  width: 65% !important;
   margin: auto;
   transform: translate(0, -20px);
 }
 
-.searchButton {
-  margin: 0;
-  padding: 0;
-  float: left;
-  transform: translate(-610%, -20px);
-  border: 1px lightgray solid;
-  border-left: none;
-  border-radius: 5px;
-  background-color: #fff;
-  color: $primary-color;
-}
+// .searchButton {
+//   margin: 0;
+//   padding: 0;
+//   float: left;
+//   transform: translate(-610%, -20px);
+//   border: 1px lightgray solid;
+//   border-left: none;
+//   border-radius: 5px;
+//   background-color: #fff;
+//   color: $primary-color;
+// }
 
 .card-body2 {
   display: flex;
@@ -135,6 +133,9 @@ body {
   border-radius: 12px;
   width: 70px;
   margin-right: 5px;
+  left: 230px;
+  top: 10px;
+  position: absolute;
 }
 
 .featTag {
@@ -143,12 +144,19 @@ body {
   border-radius: 12px;
   width: 109px;
   text-align: center;
+  left: 310px;
+  top: 10px;
+  position: absolute;
+}
+
+.companyRow {
+  height: 25px;
 }
 
 .bottom-row {
   font-weight: 300;
   font-size: 12px;
-  width: 36% !important;
+  width: 40% !important;
 }
 
 .mycustom {
@@ -157,14 +165,14 @@ body {
 
 .mycustom input[type=search] {
   border: none;
-  width: 60%;
+  width: 65%;
 }
 
 .mycustom .input-group-prepend {
   position: absolute;
   align-content: center;
   transform: translate(0, -9px);
-  // left: 4px;
-  // top: 3px;
+  left: 18%;
+  top: 0px;
   z-index:9;
 }

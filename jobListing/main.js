@@ -3,47 +3,12 @@ let inputSpace = 0;
 let filters = [];
 let applications;
 
-
-
-// let applications = [
-//   {
-//     id: 1,
-//     company: 'Photosnap',
-//     logo: './images/photosnap.svg',
-//     new: true,
-//     featured: true,
-//     position: 'Senior Frontend Developer',
-//     role: 'Frontend',
-//     level: 'Senior',
-//     postedAt: '1d ago',
-//     contract: 'Full Time',
-//     location: 'USA Only',
-//     languages: ['HTML', 'CSS', 'JavaScript'],
-//     tools: [],
-//   },
-//   {
-//     id: 2,
-//     company: 'Manage',
-//     logo: './images/manage.svg',
-//     new: true,
-//     featured: true,
-//     position: 'Fullstack Developer',
-//     role: 'Fullstack',
-//     level: 'Midweight',
-//     postedAt: '1d ago',
-//     contract: 'Part Time',
-//     location: 'Remote',
-//     languages: ['Python'],
-//     tools: ['React'],
-//   }
-// ];
-
-// const searchEngineVars = {
-//   roles: ["Frontend", "Backend", "Fullstack"],
-//   levels: ["Junior", "Midweight", "Senior"],
-//   languages: ["Python", "Ruby", "JavaScript", "HTML", "CSS"],
-//   tools: ["React", "Sass", "Vue", "Django", "RoR"]
-// }
+const searchEngineVars = {
+  roles: ["Frontend", "Backend", "Fullstack"],
+  levels: ["Junior", "Midweight", "Senior"],
+  languages: ["Python", "Ruby", "JavaScript", "HTML", "CSS"],
+  tools: ["React", "Sass", "Vue", "Django", "RoR"]
+}
 
 function searchEngine() {
   for(i=0; i < applications.length; i++) {
@@ -104,7 +69,6 @@ function searchEngine() {
         filterType = "tool";
         break;
     }
-    //shows all cards
 
     for(j=0; j < applications.length; j++) {
       if(filterType == "role") {
@@ -135,49 +99,37 @@ function searchEngine() {
   }
 }
 
-//reads the input field and adds the typed buttons
-document.getElementById('searchBar').addEventListener('change', () => {
-  console.log("event function ran");
-  // console.log(searchEngineVars.length)
-  for(i=0; i < 6; i++) {
-    console.log("for loop 1 runs");
-    console.log(document.getElementById("searchBar").value);
-      // console.log("for loop 2 runs")
-      if(document.getElementById("searchBar").value == searchEngineVars.roles[i]) {
-        console.log("if statement runs");
-        let roleButton = document.createElement('button');
-        roleButton.classList.add('btn-secondary');
-        roleButton.innerHTML = searchEngineVars.roles[i];
-        roleButton.onclick = () => {clearButton(roleButton)};
-        // console.log(langButton.innerHTML);
-        addButton(roleButton);
-      } else if(document.getElementById("searchBar").value == searchEngineVars.levels[i]) {
-        console.log("if statement 2 runs");
-          let levelButton = document.createElement('button');
-          levelButton.classList.add('btn-secondary');
-          levelButton.innerHTML = searchEngineVars.levels[i];
-          levelButton.onclick = () => {clearButton(levelButton)};
-          // console.log(langButton.innerHTML);
-          addButton(levelButton);
-      } else if(document.getElementById("searchBar").value == searchEngineVars.languages[i]) {
-        console.log("if statement 3 runs");
-          let langButton = document.createElement('button');
-          langButton.classList.add('btn-secondary');
-          langButton.innerHTML = searchEngineVars.languages[i];
-          langButton.onclick = () => {clearButton(langButton)};
-          // console.log(langButton.innerHTML);
-          addButton(langButton);
-      } else if(document.getElementById("searchBar").value == searchEngineVars.tools[i]) {
-        console.log("if statement 4 runs");
-          let toolsButton = document.createElement('button');
-          toolsButton.classList.add('btn-secondary');
-          toolsButton.innerHTML = searchEngineVars.tools[i];
-          toolsButton.onclick = () => {clearButton(toolsButton)};
-          // console.log(langButton.innerHTML);
-          addButton(toolsButton);
-      }
-  }
-});
+// //reads the input field and adds the typed buttons
+// $("#searchBar").keypress( () => {
+//   for(i=0; i < 6; i++) {
+//     console.log(document.getElementById("searchBar").value);
+//       if(document.getElementById("searchBar").value == searchEngineVars.roles[i]) {
+//         let roleButton = document.createElement('button');
+//         roleButton.classList.add('btn-secondary');
+//         roleButton.innerHTML = searchEngineVars.roles[i];
+//         roleButton.onclick = () => {clearButton(roleButton)};
+//         addButton(roleButton);
+//       } else if(document.getElementById("searchBar").value == searchEngineVars.levels[i]) {
+//           let levelButton = document.createElement('button');
+//           levelButton.classList.add('btn-secondary');
+//           levelButton.innerHTML = searchEngineVars.levels[i];
+//           levelButton.onclick = () => {clearButton(levelButton)};
+//           addButton(levelButton);
+//       } else if(document.getElementById("searchBar").value == searchEngineVars.languages[i]) {
+//           let langButton = document.createElement('button');
+//           langButton.classList.add('btn-secondary');
+//           langButton.innerHTML = searchEngineVars.languages[i];
+//           langButton.onclick = () => {clearButton(langButton)};
+//           addButton(langButton);
+//       } else if(document.getElementById("searchBar").value == searchEngineVars.tools[i]) {
+//           let toolsButton = document.createElement('button');
+//           toolsButton.classList.add('btn-secondary');
+//           toolsButton.innerHTML = searchEngineVars.tools[i];
+//           toolsButton.onclick = () => {clearButton(toolsButton)};
+//           addButton(toolsButton);
+//       }
+//   }
+// });
 
 function addButton(button) {
   document.getElementById('searchBar').value = '';
@@ -190,17 +142,11 @@ function addButton(button) {
       console.log(filters);
       searchEngine();
       copyButton.onclick = () => {clearButton(copyButton)};
-      // console.log(langButton.innerHTML);
-      console.log(copyButton.style.width);
-      inputSpace += parseInt(copyButton.style.width, 10);
-      console.log(inputSpace);
-      addSpace();
       document.getElementById("button-group").appendChild(copyButton);
 }
 
 function clearButton(button) {
   for(i=0; i < filters.length; i++) {
-    // console.log(`${filters[i]} ${button.innerHTML.slice(0, button.innerHTML.length-1)}`);
     if(button.innerHTML.slice(0, button.innerHTML.length-1) == filters[i]) {
       filters.splice(i, 1);
     }
@@ -213,16 +159,6 @@ function clearButton(button) {
   searchEngine();
   if(buttonCounter == 0) {
     document.getElementById('searchBar').placeholder = 'Filter...';
-  }
-}
-
-function addSpace() {
-  document.getElementById('searchBar').value = '';
-  let value = document.getElementById('searchBar').value;
-  console.log(inputSpace);
-  for(i=0; i < inputSpace/10;i++) {
-    value = `${value} `;
-    document.getElementById('searchBar').value = value;
   }
 }
 
@@ -248,26 +184,32 @@ fetch("data.json")
   for (let i = 0; i < applications.length; i++) {
     let cardDiv = document.createElement('div');
     cardDiv.classList.add('card');
+    cardDiv.classList.add('row');
     cardDiv.id = `${applications[i].id}`;
 
     let insideDiv = document.createElement('div');
     insideDiv.classList.add('card-body');
+    insideDiv.classList.add('col-4');
     cardDiv.appendChild(insideDiv);
 
     let inside2Div = document.createElement('div');
+    inside2Div.classList.add('card-body');
     inside2Div.classList.add('card-body2');
-    insideDiv.appendChild(inside2Div);
+    inside2Div.classList.add('col-6');
+    cardDiv.appendChild(inside2Div);
 
     let profPic = document.createElement('img');
     profPic.src = applications[i].logo;
-    inside2Div.appendChild(profPic);
+    insideDiv.appendChild(profPic);
 
     let titleColumn = document.createElement('div');
     titleColumn.classList.add('titleContainer');
-    inside2Div.appendChild(titleColumn);
+    insideDiv.appendChild(titleColumn);
 
     let companyRow = document.createElement('div');
     companyRow.classList.add('row');
+    companyRow.classList.add('companyRow');
+
 
     let company = document.createElement('p');
     company.classList.add('paragraph');
@@ -315,13 +257,9 @@ fetch("data.json")
     location.innerHTML = `${applications[i].location}`;
     timeRow.appendChild(location);
 
-    // let para = document.createElement("p");
-    // para.classList.add("card-text");
-    // insideDiv.appendChild(para);
-
     let langDiv = document.createElement('div');
     langDiv.classList.add('btn-container');
-    insideDiv.appendChild(langDiv);
+    inside2Div.appendChild(langDiv);
 
     let roleButton = document.createElement('button');
     roleButton.classList.add('btn-secondary');
@@ -340,7 +278,6 @@ fetch("data.json")
       langButton.classList.add('btn-secondary');
       langButton.innerHTML = applications[i].languages[j];
       langButton.onclick = () => {addButton(langButton)};
-      // console.log(langButton.innerHTML);
       langDiv.appendChild(langButton);
     }
 
@@ -349,7 +286,6 @@ fetch("data.json")
       toolsButton.classList.add('btn-secondary');
       toolsButton.innerHTML = `${applications[i].tools[j]}`;
       toolsButton.onclick = () => {addButton(toolsButton)};
-      // console.log(toolsButton.innerHTML);
       langDiv.appendChild(toolsButton);
     }
 
