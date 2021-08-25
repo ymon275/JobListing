@@ -48,7 +48,6 @@ body {
 
 .row {
   display: flex;
-  // flex-wrap: nowrap;
 }
 
 .paragraph {
@@ -56,9 +55,7 @@ body {
   max-width: max-content;
   height: 10px;
   margin-bottom: 10px;
-  // height: 50px;
   top: 10px;
-  // position: absolute;
 }
 
 .card-body {
@@ -78,7 +75,6 @@ body {
   background-position: center;
   height: 200px;
   width: 100%;
-  // min-width: 500px;
 }
 
 .card {
@@ -100,7 +96,6 @@ body {
   background-color: $filter-tabs;
   border-radius: 3px;
   border: none;
-  // position: absolute;
   margin: 0 5px;
   &:hover {
     color: #fff;
@@ -109,16 +104,9 @@ body {
   }
 }
 
-// .btn-container {
-//   display: flex;
-//   flex-wrap: wrap;
-//   align-items: center;
-// }
-
 .card-title {
   font-weight: 700;
   left: 10px;
-  // margin-left: 5px;
   &:hover {
     color: $primary-color;
   }
@@ -126,7 +114,6 @@ body {
 
 .form-control-lg {
   width: 65%;
-  // min-width: 300px;
   height: fit-content;
   @media (max-width: 500px) {
     height: 100px;
@@ -136,23 +123,10 @@ body {
   transform: translate(0, -20px);
 }
 
-// .searchButton {
-//   margin: 0;
-//   padding: 0;
-//   float: left;
-//   transform: translate(-610%, -20px);
-//   border: 1px lightgray solid;
-//   border-left: none;
-//   border-radius: 5px;
-//   background-color: #fff;
-//   color: $primary-color;
-// }
-
 .card-body2 {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  // float:right;
 }
 
 .newTag {
@@ -162,9 +136,6 @@ body {
   width: 70px;
   height: 20px;
   margin-right: 5px;
-  // left: 230px;
-  // top: 10px;
-  // position: absolute;
 }
 
 .featTag {
@@ -174,9 +145,6 @@ body {
   width: 109px;
   height: 20px;
   text-align: center;
-  // left: 310px;
-  // top: 10px;
-  // position: absolute;
 }
 
 .companyRow {
@@ -189,7 +157,6 @@ body {
   font-weight: 300;
   font-size: 12px;
   max-width: fit-content;
-  // width: 40% !important;
 }
 
 .mycustom {

@@ -104,38 +104,6 @@ function searchEngine() {
   }
 }
 
-// //reads the input field and adds the typed buttons
-// $("#searchBar").keypress( () => {
-//   for(i=0; i < 6; i++) {
-//     console.log(document.getElementById("searchBar").value);
-//       if(document.getElementById("searchBar").value == searchEngineVars.roles[i]) {
-//         let roleButton = document.createElement('button');
-//         roleButton.classList.add('btn-secondary');
-//         roleButton.innerHTML = searchEngineVars.roles[i];
-//         roleButton.onclick = () => {clearButton(roleButton)};
-//         addButton(roleButton);
-//       } else if(document.getElementById("searchBar").value == searchEngineVars.levels[i]) {
-//           let levelButton = document.createElement('button');
-//           levelButton.classList.add('btn-secondary');
-//           levelButton.innerHTML = searchEngineVars.levels[i];
-//           levelButton.onclick = () => {clearButton(levelButton)};
-//           addButton(levelButton);
-//       } else if(document.getElementById("searchBar").value == searchEngineVars.languages[i]) {
-//           let langButton = document.createElement('button');
-//           langButton.classList.add('btn-secondary');
-//           langButton.innerHTML = searchEngineVars.languages[i];
-//           langButton.onclick = () => {clearButton(langButton)};
-//           addButton(langButton);
-//       } else if(document.getElementById("searchBar").value == searchEngineVars.tools[i]) {
-//           let toolsButton = document.createElement('button');
-//           toolsButton.classList.add('btn-secondary');
-//           toolsButton.innerHTML = searchEngineVars.tools[i];
-//           toolsButton.onclick = () => {clearButton(toolsButton)};
-//           addButton(toolsButton);
-//       }
-//   }
-// });
-
 function addButton(button) {
   document.getElementById('searchBar').value = '';
   document.getElementById('searchBar').placeholder = '';
@@ -249,10 +217,6 @@ fetch("data.json")
     location.classList.add('bottom-row');
     location.innerHTML = `${applications[i].location}`;
     timeRow.appendChild(location);
-
-    // let para = document.createElement("p");
-    // para.classList.add("card-text");
-    // insideDiv.appendChild(para);
 
     let langDiv = document.createElement('div');
     langDiv.classList.add('btn-container');
