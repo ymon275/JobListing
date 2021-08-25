@@ -14,6 +14,7 @@ function searchEngine() {
   for(i=0; i < applications.length; i++) {
     $(`#${applications[i].id}`).show();
   }
+  console.log("search engine runs")
   for(i=0; i < filters.length; i++) {
     let filterType;
     switch(filters[i]) {
@@ -75,17 +76,20 @@ function searchEngine() {
         if(filters[i] != applications[j].role) {
           //changes all the cards to match the filters
           $(`#${applications[j].id}`).hide();
+          console.log("search engine worked")
         }
         
       } else if(filterType == "level") {
           if(filters[i] != applications[j].level) {
             $(`#${applications[j].id}`).hide();
+            console.log("search engine worked")
           }
       } else if(filterType == "language") {
           if(!applications[j].languages.some((lang) => {
             return lang == filters[i];
           })) {
             $(`#${applications[j].id}`).hide();
+            console.log("search engine worked")
           }
 
       } else if(filterType == "tool") {
@@ -93,6 +97,7 @@ function searchEngine() {
             return tool == filters[i];
           })) {
             $(`#${applications[j].id}`).hide();
+            console.log("search engine worked")
           }
       }
     }
@@ -175,58 +180,50 @@ fetch("data.json")
   .finally(() => {
   for (let i = 0; i < applications.length; i++) {
     let cardDiv = document.createElement('div');
-    cardDiv.classList.add('card');
-    cardDiv.classList.add('row');
     cardDiv.id = `${applications[i].id}`;
+    cardDiv.classList.add('card');
 
     let insideDiv = document.createElement('div');
     insideDiv.classList.add('card-body');
-    insideDiv.classList.add('col-4');
     cardDiv.appendChild(insideDiv);
 
     let inside2Div = document.createElement('div');
-    inside2Div.classList.add('card-body');
     inside2Div.classList.add('card-body2');
-    insideDiv.classList.add('col-4');
-    // inside2Div.classList.add('col-12');
-    cardDiv.appendChild(inside2Div);
+    insideDiv.appendChild(inside2Div);
 
     let profPic = document.createElement('img');
     profPic.src = applications[i].logo;
-    insideDiv.appendChild(profPic);
+    inside2Div.appendChild(profPic);
 
     let titleColumn = document.createElement('div');
     titleColumn.classList.add('titleContainer');
-    insideDiv.appendChild(titleColumn);
+    inside2Div.appendChild(titleColumn);
 
     let companyRow = document.createElement('div');
     companyRow.classList.add('row');
-    companyRow.classList.add('companyRow');
-
 
     let company = document.createElement('p');
     company.classList.add('paragraph');
-    company.classList.add("col-3");
     company.innerHTML = `${applications[i].company}`;
     companyRow.appendChild(company);
+
     
     if (applications[i].new === true) {
       let newTag = document.createElement('p');
-      newTag.classList.add('newTag');
-      newTag.classList.add("col-2");
+    newTag.classList.add('newTag');
       newTag.innerHTML = 'NEW!';
       cardDiv.style.borderLeft = '5px hsl(180, 29%, 50%) solid';
       companyRow.appendChild(newTag);
     }
+
     
     if (applications[i].featured === true) {
       let featTag = document.createElement('p');
-      featTag.classList.add('featTag');
-      featTag.classList.add("col-2");
+    featTag.classList.add('featTag');
       featTag.innerHTML = 'FEATURED';
       companyRow.appendChild(featTag);
     }
-    
+
     titleColumn.appendChild(companyRow);
 
     let title = document.createElement('h5');
@@ -240,25 +237,26 @@ fetch("data.json")
 
     let post = document.createElement('p');
     post.classList.add('bottom-row');
-    post.classList.add("col");
     post.innerHTML = `${applications[i].postedAt}`;
     timeRow.appendChild(post);
 
     let contract = document.createElement('p');
     contract.classList.add('bottom-row');
-    contract.classList.add("col");
     contract.innerHTML = `${applications[i].contract}`;
     timeRow.appendChild(contract);
 
     let location = document.createElement('p');
     location.classList.add('bottom-row');
-    location.classList.add('col');
     location.innerHTML = `${applications[i].location}`;
     timeRow.appendChild(location);
 
+    // let para = document.createElement("p");
+    // para.classList.add("card-text");
+    // insideDiv.appendChild(para);
+
     let langDiv = document.createElement('div');
     langDiv.classList.add('btn-container');
-    inside2Div.appendChild(langDiv);
+    insideDiv.appendChild(langDiv);
 
     let roleButton = document.createElement('button');
     roleButton.classList.add('btn-secondary');
@@ -275,7 +273,8 @@ fetch("data.json")
     for (j = 0; j < applications[i].languages.length; j++) {
       let langButton = document.createElement('button');
       langButton.classList.add('btn-secondary');
-      langButton.innerHTML = applications[i].languages[j];
+      langButton.innerHTML = `${applications[i].languages[j]}`;
+      console.log(langButton.innerHTML);
       langButton.onclick = () => {addButton(langButton)};
       langDiv.appendChild(langButton);
     }
@@ -284,6 +283,7 @@ fetch("data.json")
       let toolsButton = document.createElement('button');
       toolsButton.classList.add('btn-secondary');
       toolsButton.innerHTML = `${applications[i].tools[j]}`;
+      console.log(toolsButton.innerHTML);
       toolsButton.onclick = () => {addButton(toolsButton)};
       langDiv.appendChild(toolsButton);
     }
