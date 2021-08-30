@@ -1,5 +1,4 @@
 let buttonCounter = 0;
-let inputSpace = 0;
 let filters = [];
 let applications;
 
@@ -14,7 +13,6 @@ function searchEngine() {
   for(i=0; i < applications.length; i++) {
     $(`#${applications[i].id}`).show();
   }
-  console.log("search engine runs")
   for(i=0; i < filters.length; i++) {
     let filterType;
     switch(filters[i]) {
@@ -76,20 +74,17 @@ function searchEngine() {
         if(filters[i] != applications[j].role) {
           //changes all the cards to match the filters
           $(`#${applications[j].id}`).hide();
-          console.log("search engine worked")
         }
         
       } else if(filterType == "level") {
           if(filters[i] != applications[j].level) {
             $(`#${applications[j].id}`).hide();
-            console.log("search engine worked")
           }
       } else if(filterType == "language") {
           if(!applications[j].languages.some((lang) => {
             return lang == filters[i];
           })) {
             $(`#${applications[j].id}`).hide();
-            console.log("search engine worked")
           }
 
       } else if(filterType == "tool") {
@@ -97,7 +92,6 @@ function searchEngine() {
             return tool == filters[i];
           })) {
             $(`#${applications[j].id}`).hide();
-            console.log("search engine worked")
           }
       }
     }
@@ -158,7 +152,7 @@ function clearButton(button) {
   }
   $(button).hide();
   buttonCounter--;
-  inputSpace -= parseInt(button.style.width, 10);
+  // inputSpace -= parseInt(button.style.width, 10);
   
   console.log(filters);
   searchEngine();
@@ -166,18 +160,10 @@ function clearButton(button) {
     document.getElementById('searchBar').placeholder = 'Filter...';
   }
 }
-
-fetch("data.json")
-  .then(response => response.json())
-  .then(data => {
-    console.log(data);
-    applications = data;
-  })
-  .catch((e) => {
-    errorScreen = document.createElement("h1");
-    errorScreen.innerHTML = "Sorry, there was a problem";
-  })
-  .finally(() => {
+window.onload = async function () {
+  try {
+  const data = await fetch("data.json");
+  applications = await data.json();
   for (let i = 0; i < applications.length; i++) {
     let cardDiv = document.createElement('div');
     cardDiv.id = `${applications[i].id}`;
@@ -249,11 +235,7 @@ fetch("data.json")
     location.classList.add('bottom-row');
     location.innerHTML = `${applications[i].location}`;
     timeRow.appendChild(location);
-
-    // let para = document.createElement("p");
-    // para.classList.add("card-text");
-    // insideDiv.appendChild(para);
-
+    
     let langDiv = document.createElement('div');
     langDiv.classList.add('btn-container');
     insideDiv.appendChild(langDiv);
@@ -290,4 +272,9 @@ fetch("data.json")
 
     document.body.appendChild(cardDiv);
   }
-});
+}
+  catch(e) {
+    errorScreen = document.createElement("h1");
+    errorScreen.innerHTML = "Sorry, there was a problem";
+  }
+}
