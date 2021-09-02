@@ -244,5 +244,6 @@ window.onload = async function () {
   catch(e) {
     errorScreen = document.createElement("h1");
     errorScreen.innerHTML = "Sorry, there was a problem";
+    document.body.appendChild(errorScreen);
   }
 }
