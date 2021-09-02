@@ -203,11 +203,7 @@ window.onload = async function () {
     location.classList.add('bottom-row');
     location.innerHTML = `${applications[i].location}`;
     timeRow.appendChild(location);
-<<<<<<< HEAD
-
-=======
     
->>>>>>> foo
     let langDiv = document.createElement('div');
     langDiv.classList.add('btn-container');
     insideDiv.appendChild(langDiv);
